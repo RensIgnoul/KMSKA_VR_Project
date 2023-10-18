@@ -29,6 +29,7 @@ public class FirstCut : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            angle.triggerRay = true;
             Debug.Log("Player is in zone");
         }
     }
@@ -36,7 +37,7 @@ public class FirstCut : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(angle.y > -0.6341372 && angle.y < -0.3582904)
+            if (angle.HandleRay()) //angle.y > -0.6341372 && angle.y < -0.3582904)
             {
                 Debug.Log("Player is in zone and looking");
                 testObject.SetActive(true);
@@ -44,6 +45,13 @@ public class FirstCut : MonoBehaviour
                 Doors[0].SetActive(true);
                 Doors[1].SetActive(false);
             }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            angle.triggerRay = false;
         }
     }
 

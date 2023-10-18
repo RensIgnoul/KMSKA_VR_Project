@@ -7,6 +7,7 @@ TagManager:
   - Anchor
   - Collision1
   - WallDoor
+  - testTarget
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,7 @@ public class CameraAngle : MonoBehaviour
     public float y;
     public float z;
     // Start is called before the first frame update
+    public bool triggerRay = false;
     void Start()
     {
         
@@ -18,6 +19,19 @@ public class CameraAngle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (triggerRay)
+        {
+            Debug.Log("triggered");
+        }
+        /*Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 200f) )
+        {
+            if (hit.collider.CompareTag("testTarget"))
+            {
+                Debug.Log("Test");
+            }
+        }*/
         if (cameraTransform == null)
         {
             Debug.LogError("Camera Transform is not assigned.");
@@ -30,6 +44,26 @@ public class CameraAngle : MonoBehaviour
         x = cameraTransform.rotation.x;
         y = cameraTransform.rotation.y;
         z = cameraTransform.rotation.z;
+        Debug.DrawRay(transform.position, transform.forward*20);
 
+    }
+    public bool HandleRay()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 200f)&& triggerRay)
+        {
+            if (hit.collider.CompareTag("testTarget"))
+            {
+                Debug.Log("Test");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return false;
     }
 }
