@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Phase 1
+  - Phase 2
+  - Anchor
+  - Trigger1
+  - Trigger1Zone
   layers:
   - Default
   - TransparentFX
