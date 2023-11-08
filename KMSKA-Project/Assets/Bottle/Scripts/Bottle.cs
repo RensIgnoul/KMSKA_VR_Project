@@ -8,10 +8,10 @@ public class Bottle : MonoBehaviour
     
     void Update() // just for testing
     {
-        if(Input.GetKeyDown(KeyCode.K))
+        /*if(Input.GetKeyDown(KeyCode.K))
         {
             Explode();
-        }
+        }*/
     }
     
     void Explode()
