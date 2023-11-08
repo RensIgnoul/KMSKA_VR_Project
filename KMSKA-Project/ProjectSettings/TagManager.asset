@@ -12,6 +12,7 @@ TagManager:
   - canvas
   - TutorialTrigger2
   - TutorialTrigger1
+  - TutorialTrigger3
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,8 @@ public class tutorailCamera : MonoBehaviour
     private bool go1 = true;
     private bool go2 = true;
     private GameObject trigger3;
+    [SerializeField]
+    private MovementTutorial tutorialPartTwo;
     void Start()
     {
         text.text = "Look at the two nodes";
@@ -61,7 +63,8 @@ public class tutorailCamera : MonoBehaviour
             else
             {
                 text.text = "Congratulations!";
-                move();
+                trigger3.SetActive(true);
+                tutorialPartTwo.activated = true;
             }
         }
     }
