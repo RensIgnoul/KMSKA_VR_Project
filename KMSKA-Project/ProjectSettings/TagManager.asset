@@ -9,6 +9,9 @@ TagManager:
   - Anchor
   - Trigger1
   - Trigger1Zone
+  - canvas
+  - TutorialTrigger2
+  - TutorialTrigger1
   layers:
   - Default
   - TransparentFX
