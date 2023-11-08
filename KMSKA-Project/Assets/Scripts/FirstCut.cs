@@ -54,19 +54,4 @@ public class FirstCut : MonoBehaviour
             angle.triggerRay = false;
         }
     }
-
-    private void ToggleDoors()
-    {
-        for (int i = 0; i < PhaseOneObjects.Length; i++)
-        {
-            if (PhaseOneObjects[i].activeSelf == true)
-            {
-                PhaseOneObjects[i].SetActive(false);
-            }
-            else
-            {
-                PhaseOneObjects[i].SetActive(true);
-            }
-        }
-    }
 }
