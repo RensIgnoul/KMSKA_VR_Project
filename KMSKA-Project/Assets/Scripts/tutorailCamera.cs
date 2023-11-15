@@ -62,18 +62,10 @@ public class tutorailCamera : MonoBehaviour
             }
             else
             {
-                text.text = "Congratulations!";
+                text.text = "Walk towards the area";
                 trigger3.SetActive(true);
                 tutorialPartTwo.activated = true;
             }
         }
-    }
-
-    public void move()
-    {
-        trigger3.SetActive(true);
-        text.text = "walk towards the platform";
-
-
     }
 }
