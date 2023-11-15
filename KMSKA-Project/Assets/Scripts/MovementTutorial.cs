@@ -8,10 +8,12 @@ public class MovementTutorial : MonoBehaviour
     [SerializeField]
     private Canvas canvas;
     public SceneController sceneController;
+    public CameraFade fade;
 
     [SerializeField]
     private TMP_Text text;
     public bool activated = false;
+    public float transitionLength = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,12 @@ public class MovementTutorial : MonoBehaviour
         {
             Debug.Log("Finished tutorial");
             text.text = "Finished Tutorial";
-            Invoke("changeScene", 2.0f);
+            fade.StartFadeIn();
+            Invoke("changeScene",transitionLength);
+        }
+        else
+        {
+            Debug.Log("ERR0R in OnTrigger event");
         }
     }
 

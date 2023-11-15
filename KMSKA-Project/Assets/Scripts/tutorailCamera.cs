@@ -22,7 +22,10 @@ public class tutorailCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lookAround();
+        if (tutorialPartTwo.activated == false)
+        {
+            lookAround();
+        }
     }
 
     public void lookAround()
