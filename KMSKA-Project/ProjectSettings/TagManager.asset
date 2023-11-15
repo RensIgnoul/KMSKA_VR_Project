@@ -9,6 +9,9 @@ TagManager:
   - Anchor
   - Trigger1
   - Trigger1Zone
+  - Phase 3
+  - Trigger2
+  - Trigger2Zone
   - canvas
   - TutorialTrigger2
   - TutorialTrigger1

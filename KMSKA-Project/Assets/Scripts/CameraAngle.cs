@@ -45,7 +45,7 @@ public class CameraAngle : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 200f) && triggerRay)
         {
-            if (hit.collider.CompareTag("Trigger1"))
+            if (hit.collider.CompareTag("Trigger1") || hit.collider.CompareTag("Trigger2"))
             {
                 Debug.Log("Test");
                 return true;
