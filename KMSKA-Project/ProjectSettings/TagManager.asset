@@ -12,6 +12,10 @@ TagManager:
   - Phase 3
   - Trigger2
   - Trigger2Zone
+  - canvas
+  - TutorialTrigger2
+  - TutorialTrigger1
+  - TutorialTrigger3
   layers:
   - Default
   - TransparentFX
