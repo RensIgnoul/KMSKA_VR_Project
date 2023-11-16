@@ -1,30 +1,51 @@
 using UnityEngine;
 using TMPro;
 using System;
+using System.Collections;
 
 public class tutorailCamera : MonoBehaviour
 {
     // Start is called before the first frame update
     public Canvas canvas;
     public TMP_Text text;
+    public bool startTutorial;
     private bool go1 = true;
     private bool go2 = true;
+    private GameObject trigger1;
+    private GameObject trigger2;
     private GameObject trigger3;
     [SerializeField]
     private MovementTutorial tutorialPartTwo;
     void Start()
     {
-        text.text = "Look at the two nodes";
+        startTutorial = false;
+        text.text = "";
+        trigger1 = GameObject.FindGameObjectWithTag("TutorialTrigger1");
+        trigger2 = GameObject.FindGameObjectWithTag("TutorialTrigger2");
         trigger3 = GameObject.FindGameObjectWithTag("TutorialTrigger3");
+        trigger1.SetActive(false);
+        trigger2.SetActive(false);
         trigger3.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (tutorialPartTwo.activated == false)
+        if (tutorialPartTwo.activated == false && startTutorial)
         {
+            if (text.text == "")
+            {
+                text.text = "Welcome to the tutorial";
+                StartCoroutine(DisplayTextRoutine("Start by looking at the two pilars, to your left and your right"));
+                
+                trigger1.SetActive(true);
+                trigger2.SetActive(true);
+            }
             lookAround();
+        }
+        if(tutorialPartTwo.activated == false && startTutorial == false)
+        {
+            Debug.Log("starttutorial is false");
         }
     }
 
@@ -53,22 +74,28 @@ public class tutorailCamera : MonoBehaviour
             //show text
             if (go1 == true && go2 == true)
             {
-                text.text = "Look at the two nodes";
+               
             }
             else if (go1 == true && go2 == false)
             {
-                text.text = "look at the left node";
+                text.text = "look at the left pilar";
             }
             else if (go1 == false && go2 == true)
             {
-                text.text = "look at the right node";
+                text.text = "look at the right pilar";
             }
             else
             {
-                text.text = "Walk towards the area";
-                trigger3.SetActive(true);
+                text.text = "Good Job!";
+                StartCoroutine(DisplayTextRoutine("Walk towards the area", 1.5f));
+               trigger3.SetActive(true);
                 tutorialPartTwo.activated = true;
             }
         }
+    }
+    IEnumerator DisplayTextRoutine(String newText, float displayTime=3f)
+    {
+        yield return new WaitForSeconds(displayTime);
+        text.text = newText;
     }
 }

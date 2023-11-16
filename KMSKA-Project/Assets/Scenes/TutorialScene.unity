@@ -409,6 +409,7 @@ GameObject:
   - component: {fileID: 893067404}
   - component: {fileID: 893067403}
   - component: {fileID: 893067405}
+  - component: {fileID: 893067406}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -458,6 +459,21 @@ MonoBehaviour:
   targetMaterial: {fileID: 2100000, guid: 2571114ea06412c4286e7b6c0632287d, type: 2}
   fadeDuration: 5
   fadeInOnStart: 0
+--- !u!114 &893067406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893067402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b4be9733110804795c810e4002bc0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introductionCanvas: {fileID: 1617666997}
+  tutorialCanvas: {fileID: 1415300504}
+  tutorailCamera: {fileID: 1765851734}
 --- !u!1 &955834612
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +744,7 @@ GameObject:
   - component: {fileID: 1415300502}
   - component: {fileID: 1415300501}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: TutorialCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1007,7 +1023,7 @@ GameObject:
   - component: {fileID: 1617666995}
   - component: {fileID: 1617666994}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: IntroCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1537,6 +1553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1415300504}
   text: {fileID: 1477582123}
+  startTutorial: 0
   tutorialPartTwo: {fileID: 1841978125}
 --- !u!1 &1834274417
 GameObject:
