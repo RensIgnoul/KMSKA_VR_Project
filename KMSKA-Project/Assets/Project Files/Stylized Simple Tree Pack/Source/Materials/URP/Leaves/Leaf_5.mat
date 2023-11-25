@@ -29,7 +29,7 @@ Material:
   - _DISABLE_SSR_TRANSPARENT
   - _DOUBLESIDED_ON
   - _NORMALMAP_TANGENT_SPACE
-  m_LightmapFlags: 4
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
@@ -181,7 +181,7 @@ Material:
     - Vector1_07f7bfc681604ba8a1041aa20f0da95d: 0
     - Vector1_0fb587ac4ebf4295848ede2e10a1ea76: 1
     - Vector1_2366f028872548cca586a80231f9449e: 1
-    - Vector1_7befe60a42be40dcaffc92d4b5e4e74e: 0.2
+    - Vector1_7befe60a42be40dcaffc92d4b5e4e74e: 0
     - Vector1_d69206dc4fba4596b4f269babfaf4cc1: 0.6
     - Vector1_f47f81ec635e453c8ca9794d4793a782: 0
     - _AORemapMax: 1
@@ -306,7 +306,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Color_f81cfcc9b99a474895c54af03c1fefd0: {r: 0.11894803, g: 0.254717, b: 0.11894803, a: 0}
+    - Color_f81cfcc9b99a474895c54af03c1fefd0: {r: 0.24741901, g: 0.3773585, b: 0.24741901, a: 0}
     - Vector2_ee3da453ee474862bd12028a3df74cd4: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 0.42801708, b: 0.25, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
