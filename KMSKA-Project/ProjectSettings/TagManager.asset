@@ -16,6 +16,7 @@ TagManager:
   - TutorialTrigger2
   - TutorialTrigger1
   - TutorialTrigger3
+  - TutorialStart
   layers:
   - Default
   - TransparentFX

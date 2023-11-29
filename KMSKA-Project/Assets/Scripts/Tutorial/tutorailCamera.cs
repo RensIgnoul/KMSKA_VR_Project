@@ -16,6 +16,7 @@ public class tutorailCamera : MonoBehaviour
     private GameObject trigger3;
     [SerializeField]
     private MovementTutorial tutorialPartTwo;
+    private bool activateRay = true;
     void Start()
     {
         startTutorial = false;
@@ -31,25 +32,28 @@ public class tutorailCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (activateRay)
+        {
+            lookAround();
+        }
+
         if (tutorialPartTwo.activated == false && startTutorial)
         {
             if (text.text == "")
             {
                 text.text = "Welcome to the tutorial";
-                StartCoroutine(DisplayTextRoutine("Start by looking at the two pilars, to your left and your right"));
-                
-                trigger1.SetActive(true);
-                trigger2.SetActive(true);
+
+                GameObject[] obj = { trigger1, trigger2 };
+                StartCoroutine(DisplayTextRoutine("Start by looking at the two pilars, to your left and your right", 3f,obj ));
             }
-            lookAround();
         }
-        if(tutorialPartTwo.activated == false && startTutorial == false)
+        if (tutorialPartTwo.activated == false && startTutorial == false)
         {
             Debug.Log("starttutorial is false");
         }
     }
 
-    public void lookAround()
+    private void lookAround()
     {
 
         Ray ray = new Ray(transform.position, transform.forward);
@@ -70,11 +74,17 @@ public class tutorailCamera : MonoBehaviour
                 hit.collider.gameObject.SetActive(false);
                 go2 = false;
             }
+            if (hit.collider.CompareTag("TutorialStart"))
+            {
+                startTutorial = true;
+                hit.collider.gameObject.SetActive(false);
+                Debug.Log("tutorial start triggered");
+            }
 
             //show text
             if (go1 == true && go2 == true)
             {
-               
+
             }
             else if (go1 == true && go2 == false)
             {
@@ -88,14 +98,23 @@ public class tutorailCamera : MonoBehaviour
             {
                 text.text = "Good Job!";
                 StartCoroutine(DisplayTextRoutine("Walk towards the area", 1.5f));
-               trigger3.SetActive(true);
+                trigger3.SetActive(true);
                 tutorialPartTwo.activated = true;
+                activateRay = false;
+                return;
             }
         }
     }
-    IEnumerator DisplayTextRoutine(String newText, float displayTime=3f)
+    IEnumerator DisplayTextRoutine(String newText, float displayTime = 3f, GameObject[] objects = null)
     {
         yield return new WaitForSeconds(displayTime);
+        if (objects != null)
+        {
+            foreach (var item in objects)
+            {
+                item.SetActive(true);
+            }
+        }
         text.text = newText;
     }
 }
