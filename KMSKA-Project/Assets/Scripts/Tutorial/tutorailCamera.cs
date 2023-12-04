@@ -44,7 +44,7 @@ public class tutorailCamera : MonoBehaviour
                 text.text = "Welcome to the tutorial";
 
                 GameObject[] obj = { trigger1, trigger2 };
-                StartCoroutine(DisplayTextRoutine("Start by looking at the two pilars, to your left and your right", 3f,obj ));
+                StartCoroutine(DisplayTextRoutine("Start by looking at the two pilars, to your left and your right", 3f, obj));
             }
         }
         if (tutorialPartTwo.activated == false && startTutorial == false)
@@ -118,3 +118,4 @@ public class tutorailCamera : MonoBehaviour
         text.text = newText;
     }
 }
+
