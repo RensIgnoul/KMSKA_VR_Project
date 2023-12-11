@@ -8,7 +8,7 @@ public class tutorailCamera : MonoBehaviour
     // Start is called before the first frame update
     public Canvas canvas;
     public TMP_Text text;
-    public bool startTutorial;
+    public bool startTutorial = false;
     private bool go1 = true;
     private bool go2 = true;
     private GameObject trigger1;
@@ -18,8 +18,7 @@ public class tutorailCamera : MonoBehaviour
     private MovementTutorial tutorialPartTwo;
     private bool activateRay = true;
     void Start()
-    {
-        startTutorial = false;
+    { 
         text.text = "";
         trigger1 = GameObject.FindGameObjectWithTag("TutorialTrigger1");
         trigger2 = GameObject.FindGameObjectWithTag("TutorialTrigger2");

@@ -11,9 +11,20 @@ public class IntroductionSript : MonoBehaviour
     public TMP_Text text;
     public Canvas tutorialCanvas;
     public tutorailCamera tutorailCamera;
+    public bool skipTutorial;
     void Start()
     {
-        IntroFunction();
+        if (skipTutorial)
+        {
+            tutorialCanvas.enabled = true;
+            tutorailCamera.startTutorial = true;
+        }
+        else
+        {
+            tutorialCanvas.enabled = true;
+            tutorailCamera.startTutorial = true;
+            IntroFunction();
+        }
     }
 
     // Update is called once per frame
@@ -24,12 +35,13 @@ public class IntroductionSript : MonoBehaviour
     private void IntroFunction()
     {
         text.text = "Welcome to the surreal world inspired by the life of James Ensor, the visionary artist who danced on the edge of reality and imagination. ";
-        StartCoroutine(DisplayTextRoutine("Immerse yourself in the vibrant landscapes of his mind, where reality is distorted, and creativity knows no bounds.", 8f));
-        StartCoroutine(DisplayTextRoutine("As you step into Ensor's universe, prepare to witness the convergence of art and emotion. Uncover the mysteries of his life, where masks conceal truths, and each stroke of the brush tells a tale. ",13f));
-        StartCoroutine(DisplayTextRoutine("This VR journey is a canvas of exploration, where the boundaries between reality and fantasy blur.",25f));
-        StartCoroutine(DisplayTextRoutine("Before you embark on this artistic adventure, let's guide you through the brushstrokes of VR interaction.",30f));
-        StartCoroutine(DisplayTextRoutine(" In the upcoming tutorial, you'll learn to navigate this immersive world, unlocking the secrets that lie beneath the surface.", 35f));
-        StartCoroutine(DisplayTextRoutine("Get ready to paint your own story in the palette of Ensor's dreams. Your journey begins now",42f));
+        StartCoroutine(DisplayTextRoutine("Immerse yourself in the vibrant landscapes of his mind, where reality is distorted, and creativity knows no bounds.", 10f));
+        StartCoroutine(DisplayTextRoutine("As you step into Ensor's universe, prepare to witness the convergence of art and emotion. Uncover the mysteries of his life, where masks conceal truths, and each stroke of the brush tells a tale. ", 20f));
+        StartCoroutine(DisplayTextRoutine("This VR journey is a canvas of exploration, where the boundaries between reality and fantasy blur.", 30f));
+        StartCoroutine(DisplayTextRoutine("Before you embark on this artistic adventure, let's guide you through the brushstrokes of VR interaction.", 40f));
+        StartCoroutine(DisplayTextRoutine(" In the upcoming tutorial, you'll learn to navigate this immersive world, unlocking the secrets that lie beneath the surface.", 50f));
+        StartCoroutine(DisplayTextRoutine("Get ready to paint your own story in the palette of Ensor's dreams. Your journey begins now!", 60f));
+        StartCoroutine(DisplayTextRoutine("Look behind you to proceed the tutorial", 200f));
         tutorialCanvas.enabled = true;
         tutorailCamera.startTutorial = true;
     }
