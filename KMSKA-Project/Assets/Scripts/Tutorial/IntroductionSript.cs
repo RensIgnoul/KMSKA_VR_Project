@@ -18,11 +18,12 @@ public class IntroductionSript : MonoBehaviour
         {
             tutorialCanvas.enabled = true;
             tutorailCamera.startTutorial = true;
+            introductionCanvas.enabled = false;
         }
         else
         {
-            tutorialCanvas.enabled = true;
-            tutorailCamera.startTutorial = true;
+            tutorialCanvas.enabled = false;
+            tutorailCamera.startTutorial = false;
             IntroFunction();
         }
     }
@@ -42,6 +43,13 @@ public class IntroductionSript : MonoBehaviour
         StartCoroutine(DisplayTextRoutine(" In the upcoming tutorial, you'll learn to navigate this immersive world, unlocking the secrets that lie beneath the surface.", 50f));
         StartCoroutine(DisplayTextRoutine("Get ready to paint your own story in the palette of Ensor's dreams. Your journey begins now!", 60f));
         StartCoroutine(DisplayTextRoutine("Look behind you to proceed the tutorial", 200f));
+        Invoke("activateTutorial", 210f);
+
+
+    }
+
+    void activateTutorial()
+    {
         tutorialCanvas.enabled = true;
         tutorailCamera.startTutorial = true;
     }
