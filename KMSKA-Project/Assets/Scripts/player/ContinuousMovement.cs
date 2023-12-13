@@ -13,7 +13,7 @@ public class ContinuousMovement : MonoBehaviour
     private CharacterController character;
     private XRRig rig;
 
-    [SerializeField] private float speed = 1f;
+    [SerializeField] private float speed;
     [SerializeField] private float fallingSpeed = 0f;
     [SerializeField] private float gravity = 1f;//??
     [SerializeField] private float heightOffset = 1f;//??
@@ -26,7 +26,7 @@ public class ContinuousMovement : MonoBehaviour
     {
         CapsuleFollowHeadset();
         Quaternion headYaw = Quaternion.Euler(0, rig.cameraGameObject.transform.eulerAngles.y, 0);
-        Vector3 direction = headYaw *  new Vector3(inputAxis.x, 0, inputAxis.y);
+        Vector3 direction = headYaw * new Vector3(inputAxis.x, 0, inputAxis.y);
         character.Move(direction * speed * Time.deltaTime);
 
         bool isGrounded = CheckIfGrounded();
@@ -60,7 +60,6 @@ public class ContinuousMovement : MonoBehaviour
 
     void CapsuleFollowHeadset()
     {
-        character.height = rig.cameraInRigSpaceHeight + heightOffset;
         Vector3 capsuleCenter = transform.InverseTransformPoint(rig.cameraGameObject.transform.position);
         character.center = new Vector3(capsuleCenter.x, character.height / 2 + character.skinWidth, capsuleCenter.z);
     }
