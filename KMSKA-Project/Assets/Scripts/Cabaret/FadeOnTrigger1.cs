@@ -9,10 +9,14 @@ public class FadeOnTrigger1 : MonoBehaviour
 
     private Renderer objectRenderer;
     private bool isFading = false;
+    private GameObject atelier;
+    private GameObject cabaret;
 
     void Start()
     {
         objectRenderer = objectToFade.GetComponent<Renderer>();
+        atelier = GameObject.FindGameObjectWithTag("AtelierEnsor");
+        cabaret = GameObject.FindGameObjectWithTag("Cabaret");
 
         if (objectRenderer == null)
         {
@@ -27,6 +31,8 @@ public class FadeOnTrigger1 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isFading = true;
+            atelier.SetActive(true);
+            atelier.SetActive(false);
         }
     }
 
@@ -46,7 +52,7 @@ public class FadeOnTrigger1 : MonoBehaviour
             // If the alpha becomes zero, disable the script or the renderer
             if (newAlpha <= 0f)
             {
-                if(newAlpha == 0f)
+                if (newAlpha == 0f)
                 {
                     Destroy(objectToFade);
                 }

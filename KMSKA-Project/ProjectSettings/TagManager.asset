@@ -17,6 +17,8 @@ TagManager:
   - TutorialTrigger1
   - TutorialTrigger3
   - TutorialStart
+  - AtelierEnsor
+  - Cabaret
   layers:
   - Default
   - TransparentFX
