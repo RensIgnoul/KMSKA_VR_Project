@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FirstCut : MonoBehaviour
@@ -12,6 +10,8 @@ public class FirstCut : MonoBehaviour
 
     [SerializeField]
     private GameObject newRoom;
+    [SerializeField]
+    private GameObject wall;
     public GameObject[] PhaseOneObjects;
     // Start is called before the first frame update
     void Start()
@@ -42,6 +42,7 @@ public class FirstCut : MonoBehaviour
                 Debug.Log("Player is in zone and looking");
                 //testObject.SetActive(true);
                 newRoom.SetActive(true);
+                wall.SetActive(true);
                 PhaseOneObjects[0].SetActive(false);
                 PhaseOneObjects[1].SetActive(false);
             }
