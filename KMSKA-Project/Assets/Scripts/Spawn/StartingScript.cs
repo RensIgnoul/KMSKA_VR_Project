@@ -28,9 +28,24 @@ public class StartingScript : MonoBehaviour
             Debug.Log("Starting area trigger");
             foreach (var gameObject in objects)
             {
-                gameObject.SetActive(true);
-                orb.SetActive(false);
+                if (gameObject.CompareTag("Trigger1"))
+                {
+                    Invoke("ActivateObject", 30f);
+                }
+                else
+                {
+                    gameObject.SetActive(true);
+                    orb.SetActive(false);
+                }
             }
+        }
+    }
+    private void ActivateObject()
+    {
+        // Set the GameObject active after one minute
+        if (objects[0] != null)
+        {
+            objects[0].SetActive(true);
         }
     }
 }
