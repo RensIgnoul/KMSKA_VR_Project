@@ -12,6 +12,7 @@ public class FadeOnTrigger1 : MonoBehaviour
     private GameObject atelier;
     private GameObject cabaret;
 
+    public Path[] paths;
     void Start()
     {
         objectRenderer = objectToFade.GetComponent<Renderer>();
@@ -33,6 +34,10 @@ public class FadeOnTrigger1 : MonoBehaviour
             isFading = true;
             atelier.SetActive(true);
             atelier.SetActive(false);
+            foreach (var path in paths)
+            {
+                path.StartPath = true;
+            }
         }
     }
 
