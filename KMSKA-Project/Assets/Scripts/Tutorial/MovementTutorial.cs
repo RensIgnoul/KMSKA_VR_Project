@@ -31,14 +31,14 @@ public class MovementTutorial : MonoBehaviour
     {
         if (other.CompareTag("Player") && activated)
         {
-            Debug.Log("Finished tutorial");
+            //Debug.Log("Finished tutorial");
             text.text = "Finished Tutorial";
             fade.StartFadeIn();
-            Invoke("changeScene",transitionLength);
+            Invoke("changeScene", transitionLength);
         }
         else
         {
-            Debug.Log("ERR0R in OnTrigger event");
+            //Debug.Log("ERR0R in OnTrigger event");
         }
     }
 

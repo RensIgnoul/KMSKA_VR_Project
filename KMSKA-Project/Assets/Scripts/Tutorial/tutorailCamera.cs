@@ -7,6 +7,7 @@ public class tutorailCamera : MonoBehaviour
 {
     // Start is called before the first frame update
     public Canvas canvas;
+    public AudioSource hitSound;
     public TMP_Text text;
     public bool startTutorial = false;
     private bool go1 = true;
@@ -18,7 +19,7 @@ public class tutorailCamera : MonoBehaviour
     private MovementTutorial tutorialPartTwo;
     private bool activateRay = true;
     void Start()
-    { 
+    {
         text.text = "";
         trigger1 = GameObject.FindGameObjectWithTag("TutorialTrigger1");
         trigger2 = GameObject.FindGameObjectWithTag("TutorialTrigger2");
@@ -40,6 +41,7 @@ public class tutorailCamera : MonoBehaviour
         {
             if (text.text == "")
             {
+                canvas.SetActive(true);
                 text.text = "Welcome to the tutorial";
 
                 GameObject[] obj = { trigger1, trigger2 };
@@ -48,7 +50,7 @@ public class tutorailCamera : MonoBehaviour
         }
         if (tutorialPartTwo.activated == false && startTutorial == false)
         {
-            Debug.Log("starttutorial is false");
+            //Debug.Log("starttutorial is false");
         }
     }
 
@@ -61,23 +63,25 @@ public class tutorailCamera : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 200000f))
         {
-            Debug.Log("Casting");
+            //Debug.Log("Casting");
             if (hit.collider.CompareTag("TutorialTrigger1"))
             {
                 hit.collider.gameObject.SetActive(false);
-                Debug.Log("trigger 1 activated");
+                //Debug.Log("trigger 1 activated");
+                hitSound.Play();
                 go1 = false;
             }
             if (hit.collider.CompareTag("TutorialTrigger2"))
             {
                 hit.collider.gameObject.SetActive(false);
+                hitSound.Play();
                 go2 = false;
             }
             if (hit.collider.CompareTag("TutorialStart"))
             {
                 startTutorial = true;
                 hit.collider.gameObject.SetActive(false);
-                Debug.Log("tutorial start triggered");
+                //Debug.Log("tutorial start triggered");
             }
 
             //show text
