@@ -15,8 +15,8 @@ public class FadeOnTrigger1 : MonoBehaviour
     void Start()
     {
         objectRenderer = objectToFade.GetComponent<Renderer>();
-        atelier = GameObject.FindGameObjectWithTag("AtelierEnsor");
-        cabaret = GameObject.FindGameObjectWithTag("Cabaret");
+        atelier = GameObject.FindWithTag("AtelierEnsor");
+        cabaret = GameObject.FindWithTag("Cabaret");
 
         if (objectRenderer == null)
         {

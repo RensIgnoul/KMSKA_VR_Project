@@ -19,6 +19,7 @@ TagManager:
   - TutorialStart
   - AtelierEnsor
   - Cabaret
+  - Hats
   layers:
   - Default
   - TransparentFX

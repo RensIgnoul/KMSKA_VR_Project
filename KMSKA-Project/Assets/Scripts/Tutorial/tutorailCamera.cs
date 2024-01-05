@@ -41,7 +41,7 @@ public class tutorailCamera : MonoBehaviour
         {
             if (text.text == "")
             {
-                canvas.SetActive(true);
+                canvas.enabled = true;
                 text.text = "Welcome to the tutorial";
 
                 GameObject[] obj = { trigger1, trigger2 };
