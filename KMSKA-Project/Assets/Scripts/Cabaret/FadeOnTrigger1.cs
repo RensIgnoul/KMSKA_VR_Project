@@ -16,7 +16,7 @@ public class FadeOnTrigger1 : MonoBehaviour
     void Start()
     {
         objectRenderer = objectToFade.GetComponent<Renderer>();
-        atelier = GameObject.FindGameObjectWithTag("AtelierEnsor");
+        //atelier = GameObject.FindGameObjectWithTag("AtelierEnsor");
         cabaret = GameObject.FindGameObjectWithTag("Cabaret");
 
         if (objectRenderer == null)
@@ -32,11 +32,12 @@ public class FadeOnTrigger1 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isFading = true;
-            atelier.SetActive(true);
-            atelier.SetActive(false);
+            //atelier.SetActive(true);
+            //atelier.SetActive(false);
             foreach (var path in paths)
             {
                 path.StartPath = true;
+                Debug.Log(path.StartPath);
             }
         }
     }
@@ -59,11 +60,12 @@ public class FadeOnTrigger1 : MonoBehaviour
             {
                 if (newAlpha == 0f)
                 {
-                    Destroy(objectToFade);
+                    objectToFade.SetActive(false);
+                    //Destroy(objectToFade);
                 }
                 // Disable the script or the renderer, depending on your needs
                 // For example, you can disable the script:
-                enabled = false;
+                //enabled = false;
 
                 // Or you can disable the renderer:
                 // objectRenderer.enabled = false;

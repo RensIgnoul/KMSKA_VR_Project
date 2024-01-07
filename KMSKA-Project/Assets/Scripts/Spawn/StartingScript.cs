@@ -30,7 +30,7 @@ public class StartingScript : MonoBehaviour
             {
                 if (gameObject.CompareTag("Trigger1"))
                 {
-                    Invoke("ActivateObject", 30f);
+                    Invoke("ActivateObject", 5f);
                 }
                 else
                 {

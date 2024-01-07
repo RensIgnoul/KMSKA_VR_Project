@@ -10,6 +10,8 @@ public class FadeOnTrigger : MonoBehaviour
     private Renderer objectRenderer;
     private bool isFading = false;
 
+    public Path[] paths;
+
     void Start()
     {
         objectRenderer = objectToFade.GetComponent<Renderer>();
@@ -27,6 +29,11 @@ public class FadeOnTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isFading = true;
+            foreach (var path in paths)
+            {
+                path.StartPath = true;
+                
+            }
         }
     }
 

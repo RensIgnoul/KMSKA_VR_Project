@@ -11,6 +11,8 @@ public class SecondCut : MonoBehaviour
     private GameObject newRoom;
     [SerializeField]
     private GameObject[] PhaseThreeRoom;
+
+    public GameObject painting;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,7 @@ public class SecondCut : MonoBehaviour
                 {
                     item.SetActive(false);
                 }
+                Destroy(painting);
             }
         }
     }
