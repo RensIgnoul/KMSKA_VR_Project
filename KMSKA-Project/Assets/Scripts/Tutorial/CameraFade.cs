@@ -13,7 +13,7 @@ public class CameraFade : MonoBehaviour
 
     void Start()
     {
-       
+
         if (targetMaterial == null)
         {
             Debug.LogError("Target Material is not set!");
@@ -21,7 +21,7 @@ public class CameraFade : MonoBehaviour
         }
         else
         {
-            Debug.Log("material reset");
+            //Debug.Log("material reset");
             SetMaterialAlpha(0f);
         }
 

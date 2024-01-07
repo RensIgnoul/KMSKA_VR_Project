@@ -12,8 +12,10 @@ public class IntroductionSript : MonoBehaviour
     public Canvas tutorialCanvas;
     public tutorailCamera tutorailCamera;
     public bool skipTutorial;
+    private GameObject tutorialBlock;
     void Start()
     {
+        tutorialBlock = GameObject.FindGameObjectWithTag("TutorialStart");
         if (skipTutorial)
         {
             tutorialCanvas.enabled = true;
@@ -42,7 +44,7 @@ public class IntroductionSript : MonoBehaviour
         StartCoroutine(DisplayTextRoutine("Before you embark on this artistic adventure, let's guide you through the brushstrokes of VR interaction.", 40f));
         StartCoroutine(DisplayTextRoutine(" In the upcoming tutorial, you'll learn to navigate this immersive world, unlocking the secrets that lie beneath the surface.", 50f));
         StartCoroutine(DisplayTextRoutine("Get ready to paint your own story in the palette of Ensor's dreams. Your journey begins now!", 60f));
-        StartCoroutine(DisplayTextRoutine("Look behind you to proceed the tutorial", 200f));
+        StartCoroutine(DisplayTextRoutine("Look behind you to proceed the tutorial", 65f));
         Invoke("activateTutorial", 210f);
 
 
@@ -52,6 +54,7 @@ public class IntroductionSript : MonoBehaviour
     {
         tutorialCanvas.enabled = true;
         tutorailCamera.startTutorial = true;
+        tutorialBlock.SetActive(true);
     }
 
 
