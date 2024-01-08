@@ -11,7 +11,7 @@ public class MeshInverter : MonoBehaviour
         MeshFilter mf = GetComponent<MeshFilter>();
         Mesh mesh = mf.mesh;
         InsideOut(ref mesh);
-
+        
 #if UNITY_EDITOR
         AssetDatabase.CreateAsset(mesh, "Assets/InvertedMesh.asset");
         AssetDatabase.SaveAssets();
