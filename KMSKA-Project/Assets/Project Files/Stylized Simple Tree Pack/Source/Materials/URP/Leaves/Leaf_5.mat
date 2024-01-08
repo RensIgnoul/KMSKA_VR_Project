@@ -180,9 +180,9 @@ Material:
     m_Floats:
     - Vector1_07f7bfc681604ba8a1041aa20f0da95d: 0
     - Vector1_0fb587ac4ebf4295848ede2e10a1ea76: 1
-    - Vector1_2366f028872548cca586a80231f9449e: 1
+    - Vector1_2366f028872548cca586a80231f9449e: 0
     - Vector1_7befe60a42be40dcaffc92d4b5e4e74e: 0
-    - Vector1_d69206dc4fba4596b4f269babfaf4cc1: 0.6
+    - Vector1_d69206dc4fba4596b4f269babfaf4cc1: 0
     - Vector1_f47f81ec635e453c8ca9794d4793a782: 0
     - _AORemapMax: 1
     - _AORemapMin: 0
