@@ -58,7 +58,7 @@ public class IntroductionSript : MonoBehaviour
     }
 
 
-    IEnumerator DisplayTextRoutine(String newText = "", float displayTime = 3f, GameObject[] objects = null)
+    IEnumerator DisplayTextRoutine(string newText = "", float displayTime = 3f, GameObject[] objects = null)
     {
         yield return new WaitForSeconds(displayTime);
         if (objects != null)

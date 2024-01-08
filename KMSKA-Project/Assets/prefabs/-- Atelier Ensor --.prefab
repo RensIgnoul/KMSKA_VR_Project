@@ -1942,7 +1942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetMaterial: {fileID: 2100000, guid: 2571114ea06412c4286e7b6c0632287d, type: 2}
   fadeDuration: 2
-  fadeInOnStart: 0
+  fadeInOnStart: 1
 --- !u!114 &7789794268426105032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1956,6 +1956,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spot: {fileID: 444199983745329469}
+  endcanvas: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &7195199821530243748
 GameObject:
   m_ObjectHideFlags: 0

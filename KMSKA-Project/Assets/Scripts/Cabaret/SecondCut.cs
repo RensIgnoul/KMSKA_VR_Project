@@ -22,7 +22,7 @@ public class SecondCut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -43,7 +43,10 @@ public class SecondCut : MonoBehaviour
                 newRoom.SetActive(true);
                 foreach (var item in PhaseThreeRoom)
                 {
-                    item.SetActive(false);
+                    if (item != null)
+                    {
+                        item.SetActive(false);
+                    }
                 }
                 Destroy(painting);
             }

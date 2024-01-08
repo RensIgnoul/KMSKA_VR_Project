@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class endScript : MonoBehaviour
 {
     private GameObject hats;
     public Light spot;
     private CameraFade fade;
+    public Canvas endcanvas;
+    public TMP_Text text;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +34,7 @@ public class endScript : MonoBehaviour
         
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -51,11 +55,29 @@ public class endScript : MonoBehaviour
             fade.fadeDuration = 5f;
             StartCoroutine(wait(fade.fadeDuration));
         }
-        Application.Quit();
+
     }
 
     IEnumerator wait(float displayTime = 3f)
     {
         yield return new WaitForSeconds(displayTime);
+        endcanvas.enabled = true;
+        text.text = "Born on April 13, 1860, in Ostend, Belgium, James Ensor lived through a dynamic period in art history, contributing significantly to the development of Expressionism. His masterful use of color, grotesque imagery, and a deep exploration of human psychology mark his legacy as one of the pioneers of modern art.";
+        StartCoroutine(DisplayTextRoutine("He passed away on November 19, 1949, at the age of 89. Making 2024 the year we celebrate 75 years since his passing, a tribute to his enduring legacy.", 30f));
+    }
+
+
+    IEnumerator DisplayTextRoutine(string newText = "", float displayTime = 3f, GameObject[] objects = null)
+    {
+        yield return new WaitForSeconds(displayTime);
+        if (objects != null)
+        {
+            foreach (var item in objects)
+            {
+                item.SetActive(true);
+            }
+        }
+        text.text = newText;
     }
 }
+

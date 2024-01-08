@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FirstCut : MonoBehaviour
@@ -13,11 +14,16 @@ public class FirstCut : MonoBehaviour
     [SerializeField]
     private GameObject wall;
     public GameObject[] PhaseOneObjects;
+
+    [SerializeField]
+    private audio audioScript;
+
     // Start is called before the first frame update
     void Start()
     {
         //testObject.SetActive(false);
         newRoom.SetActive(false);
+        audioScript.changeIfLoop(3, true);
     }
 
     // Update is called once per frame
@@ -45,6 +51,9 @@ public class FirstCut : MonoBehaviour
                 wall.SetActive(true);
                 PhaseOneObjects[0].SetActive(false);
                 PhaseOneObjects[1].SetActive(false);
+                audioScript.changeIfLoop(3, false);
+                audioScript.PlaySecondBackgroundMusic();
+
             }
         }
     }
@@ -55,4 +64,7 @@ public class FirstCut : MonoBehaviour
             angle.triggerRay = false;
         }
     }
+
+
+    
 }
