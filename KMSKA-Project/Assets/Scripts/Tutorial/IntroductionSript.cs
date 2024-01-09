@@ -10,24 +10,24 @@ public class IntroductionSript : MonoBehaviour
     public Canvas introductionCanvas;
     public TMP_Text text;
     public Canvas tutorialCanvas;
-    public tutorailCamera tutorailCamera;
-    public bool skipTutorial;
-    private GameObject tutorialBlock;
+    //public tutorailCamera tutorailCamera;
+    //public bool skipTutorial;
+    //private GameObject tutorialBlock;
     void Start()
     {
-        tutorialBlock = GameObject.FindGameObjectWithTag("TutorialStart");
-        if (skipTutorial)
+        //tutorialBlock = GameObject.FindGameObjectWithTag("TutorialStart");
+        /*if (skipTutorial)
         {
             tutorialCanvas.enabled = true;
             tutorailCamera.startTutorial = true;
             introductionCanvas.enabled = false;
         }
         else
-        {
-            tutorialCanvas.enabled = false;
-            tutorailCamera.startTutorial = false;
+        {*/
+         //   tutorialCanvas.enabled = false;
+         //   tutorailCamera.startTutorial = false;
             IntroFunction();
-        }
+        //}
     }
 
     // Update is called once per frame
@@ -41,21 +41,21 @@ public class IntroductionSript : MonoBehaviour
         StartCoroutine(DisplayTextRoutine("Immerse yourself in the vibrant landscapes of his mind, where reality is distorted, and creativity knows no bounds.", 10f));
         StartCoroutine(DisplayTextRoutine("As you step into Ensor's universe, prepare to witness the convergence of art and emotion. Uncover the mysteries of his life, where masks conceal truths, and each stroke of the brush tells a tale. ", 20f));
         StartCoroutine(DisplayTextRoutine("This VR journey is a canvas of exploration, where the boundaries between reality and fantasy blur.", 30f));
-        StartCoroutine(DisplayTextRoutine("Before you embark on this artistic adventure, let's guide you through the brushstrokes of VR interaction.", 40f));
-        StartCoroutine(DisplayTextRoutine(" In the upcoming tutorial, you'll learn to navigate this immersive world, unlocking the secrets that lie beneath the surface.", 50f));
+        StartCoroutine(DisplayTextRoutine("In the upcoming experience, you'll navigate an immersive world, unlocking the secrets that lie beneath the surface.", 50f));
+        StartCoroutine(DisplayTextRoutine("Hopefully, this will give you a new outlook regarding James Ensor's work.", 40f));
         StartCoroutine(DisplayTextRoutine("Get ready to paint your own story in the palette of Ensor's dreams. Your journey begins now!", 60f));
-        StartCoroutine(DisplayTextRoutine("Look behind you to proceed the tutorial", 65f));
-        Invoke("activateTutorial", 210f);
+        StartCoroutine(DisplayTextRoutine("Look behind you to proceed the experience", 65f));
+       // Invoke("activateTutorial", 210f);
 
 
     }
 
-    void activateTutorial()
+    /*void activateTutorial()
     {
         tutorialCanvas.enabled = true;
         tutorailCamera.startTutorial = true;
         tutorialBlock.SetActive(true);
-    }
+    }*/
 
 
     IEnumerator DisplayTextRoutine(string newText = "", float displayTime = 3f, GameObject[] objects = null)

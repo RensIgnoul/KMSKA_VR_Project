@@ -38,7 +38,14 @@ public class StartingScript : MonoBehaviour
             {
                 if (gameObject.CompareTag("Trigger1"))
                 {
-                    Invoke("ActivateObject", audioScript.remainingTime(0)+audioScript.trackTime(2)-.25f);
+                    if (audioScript.sources[0].isPlaying)
+                    {
+                        Invoke("ActivateObject", audioScript.remainingTime(0) + audioScript.trackTime(2) - .25f);
+                    }
+                    else
+                    {
+                        Invoke("ActivateObject", audioScript.trackTime(2) - .25f);
+                    }
                 }
                 else
                 {
